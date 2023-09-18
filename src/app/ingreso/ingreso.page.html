@@ -6,18 +6,21 @@
 
 <ion-content>
   <div id="contenedor_form_ingreso">
-    <form action="" id="form_ingreso">
+    <form [formGroup]="formularioLogin" id="form_ingreso">
       <div class="info_ingreso">
+
         <div class="info_nombre">
           <h4 class="title_info" position="floating">Usuario</h4>
-          <input type="text" placeholder="Jobbys27" class="input_info">
+          <ion-input type="text" placeholder="Jobbys27" class="input_info" formControlName="usuario" ></ion-input>
         </div>
+
         <div class="info_contrasenna">
           <h4 class="title_info">Contraseña</h4>
-          <input type="password" placeholder="********" class="input_info">
+          <ion-input type="password" placeholder="********" class="input_info" formControlName="contrasena"></ion-input>
         </div>
+        
         <div id="botones_ingreso">
-          <button class="btn_ingreso"><a href="../inicio">Ingresar</a></button>
+          <ion-button class="btn_ingreso" type="submint" (click)="ingresar()"><a >Ingresar</a></ion-button>
           <a href="../recuperar-contrasena">Recuperar contraseña</a>
           <a href="../registro">Registrarse</a>
         </div>
