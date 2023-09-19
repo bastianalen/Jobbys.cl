@@ -11,13 +11,19 @@ import { AlertController, MenuController } from '@ionic/angular';
 export class IngresoPage implements OnInit {
 
   formularioLogin: FormGroup;
+  formularioIngreso: FormGroup;
 
   //nombreUsuario = localStorage.getItem('usuario');
   constructor(public router: Router, public menuCtrl: MenuController, private alertController: AlertController, public fb: FormBuilder) { 
     this.formularioLogin = this.fb.group({
-      'usuario': new FormControl("", Validators.required),
-      'contrasena': new FormControl("", Validators.required)
-    })
+      // 'usuario': new FormControl("", Validators.required),
+      // 'contrasena': new FormControl("", Validators.required)
+    });
+
+    this.formularioIngreso = this.fb.group({
+      usuario: ['', Validators.required],
+      contrasena: ['', Validators.required],
+    });
 
   }
     
@@ -39,7 +45,7 @@ export class IngresoPage implements OnInit {
     var usuario = localStorage.getItem('usuario');
     var contrasena = localStorage.getItem('contrasena');
 
-    if(this.formularioLogin.invalid){
+    if(this.formularioIngreso.invalid){
       const alert = await this.alertController.create({
         header:'Falta información',
         message: 'Debes ingresar los datos solicitados',
