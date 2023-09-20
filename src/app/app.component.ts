@@ -26,5 +26,7 @@ export class AppComponent {
 
   cerrarSesion(){
     localStorage.removeItem('autenticado');
+    this.router.navigate(["/ingreso"]);
+    this.menu.close();
   }
 }

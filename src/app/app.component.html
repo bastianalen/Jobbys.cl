@@ -3,13 +3,8 @@
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
         <ion-list id="inbox-list">
-<<<<<<< HEAD
-          <ion-list-header>Bienvenido a XYZ</ion-list-header>
-          <ion-note>bast.cerda@profesor.xyz.cl</ion-note>
-=======
           <ion-list-header>Bienvenido a Jobbys</ion-list-header>
           <ion-note>bast.cerda@duocuc.cl</ion-note>
->>>>>>> f4fd650b1340dd733ca5f778f41d443ae58f6ec0
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected" >
@@ -19,8 +14,6 @@
           </ion-menu-toggle>
         </ion-list>
 
-<<<<<<< HEAD
-=======
         <ion-item (click)="compartirAPP()">
           <ion-icon slot="start" ios="send" md="send"></ion-icon>
           <ion-label>Compartir</ion-label>
@@ -31,7 +24,6 @@
           <ion-label>Cerrar sesion</ion-label>
         </ion-item>
 
->>>>>>> f4fd650b1340dd733ca5f778f41d443ae58f6ec0
       </ion-content>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>

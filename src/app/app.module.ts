@@ -12,7 +12,8 @@ import { AppRoutingModule } from './app-routing.module';
   declarations: [
     AppComponent
   ],
-  imports: [BrowserModule,
+  imports: [
+    BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
     FormsModule,
