@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
 }
+<<<<<<< HEAD
   //*********************************************
   //INICIO DE TOP SCROLL
   //Contenedor de top scroll
@@ -45,17 +46,55 @@
     //tamaño
     width: 100%;
     height: 100%;
+=======
+//*********************************************
+//INICIO DE TOP SCROLL
+//Contenedor de top scroll
+#top_scroll{
+    width: 100%;
+    height: 25%;
+}
+//FIN DE TOP SCROLL
+//*********************************************
+//INICIO DE CONTENEDORES DE SERVICIOS
+//Contenedor de ordenar servicios
+#ordenar_servicios{
+    width: 100%;
+    height: 70%;
+
+}
+//Contenedor de servicios presentes
+.contenedor_servicio{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+}
+//Contenedor de imagen de servicio
+.contenedor_imagen_servicio {
+    //tamaño
+    width: 100px;
+    height: 90%;
+>>>>>>> d44e863ae63e466ecea4d255105d8660aba8ac6a
     //borde
     border-radius: 50px;
     //orden
     display: flex;
     justify-content: center;
 }
+<<<<<<< HEAD
   //imagen de servicio
+=======
+//imagen de servicio
+>>>>>>> d44e863ae63e466ecea4d255105d8660aba8ac6a
 .contenedor_imagen_servicio img{
     height: 100%;
     width: 100%;
 }
+<<<<<<< HEAD
   //Conenedor de nombre de servicio
 .nombre_servicio{
     margin-top: -40px;
@@ -68,3 +107,12 @@
 }
   //FIN DE CONTENEDORES DE SERVICIOS 
   //*********************************************
+=======
+//Conenedor de nombre de servicio
+.nombre_servicios{
+    width: 100%;
+    height: 10%;
+}
+//FIN DE CONTENEDORES DE SERVICIOS 
+//*********************************************
+>>>>>>> d44e863ae63e466ecea4d255105d8660aba8ac6a
