@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Share } from '@capacitor/share';
+import { MenuController } from '@ionic/angular';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -10,5 +14,17 @@ export class AppComponent {
     { title: 'Servicios', url: 'servicios', icon: 'hammer' },
 
   ];
-  constructor() {}
+  constructor(public router: Router, private menu: MenuController) {}
+
+  compartirAPP() {
+    Share.share({
+      title:'Compartir APP',
+      url: 'https://jobbys.cl/',
+      dialogTitle: 'Jobbys APP',
+    });
+  }
+
+  cerrarSesion(){
+    localStorage.removeItem('autenticado');
+  }
 }
