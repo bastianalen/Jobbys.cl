@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { MenuController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-recuperar-contrasena',
@@ -9,9 +9,13 @@ import { MenuController } from '@ionic/angular';
 export class RecuperarContrasenaPage implements OnInit {
 
   //nombreUsuario = localStorage.getItem('usuario');
-  constructor( public menuCtrl: MenuController) { }
+  constructor( private navController: NavController, public menuCtrl: MenuController) { }
 
   ngOnInit() {
+    var autenticar = localStorage.getItem('autenticado');
+    if( autenticar == 'true'){
+      this.navController.navigateRoot('/inicio');
+    }
   }
 
   ionViewWillEnter(){

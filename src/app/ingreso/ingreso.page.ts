@@ -25,6 +25,10 @@ export class IngresoPage implements OnInit {
     
 
   ngOnInit() {
+    var autenticar = localStorage.getItem('autenticado');
+    if( autenticar == 'true'){
+      this.navController.navigateRoot('/inicio');
+    }
   }
 
   ionViewWillEnter(){
@@ -32,10 +36,6 @@ export class IngresoPage implements OnInit {
   }
 
   async ingresar(){
-    localStorage.setItem('usuario','Denfred16');
-    localStorage.setItem('contrasena','1234');
-
-
     var datos = this.formularioIngreso.value;
 
     var usuario = localStorage.getItem('usuario');

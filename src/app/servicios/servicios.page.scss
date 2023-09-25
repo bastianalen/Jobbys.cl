@@ -20,9 +20,9 @@
     height: 70%;
     display: grid;
     grid-template-columns: 48%  48%; // Separación de 3%
-    grid-column-gap: 4%;
+    grid-column-gap: 1%;
     grid-template-rows: 30% 30% 30%; // Separación de 5%
-    grid-row-gap: 5%;
+    grid-row-gap: 2%;
     overflow: hidden;
     overflow-y: scroll;
 }
@@ -64,8 +64,8 @@
 }
 //Contenedor de servicios presentes
 .contenedor_servicio{
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -75,7 +75,7 @@
 //Contenedor de imagen de servicio
 .contenedor_imagen_servicio {
     //tamaño
-    width: 100px;
+    width: 100%;
     height: 100%;
     //borde
     border-radius: 50px;
@@ -92,7 +92,7 @@
 .nombre_servicio{
     margin-top: -40px;
     border: 1px none black;
-    background: #00000061;
+    background: #000000d2;
     width: 100%;
     height: 40px;
     text-align: center;
