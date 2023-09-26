@@ -20,7 +20,6 @@ export class IngresoPage implements OnInit {
       'usuario': new FormControl("", Validators.required),
       'contrasena': new FormControl("", Validators.required)
     });
-
   }
     
 

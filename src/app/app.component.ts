@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Share } from '@capacitor/share';
-import { MenuController } from '@ionic/angular';
+import { MenuController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +14,7 @@ export class AppComponent {
     { title: 'Servicios', url: 'servicios', icon: 'hammer' },
 
   ];
-  constructor(public router: Router, private menu: MenuController) {}
+  constructor( private navController: NavController, public router: Router, private menu: MenuController) {}
 
   compartirAPP() {
     Share.share({
@@ -26,7 +26,7 @@ export class AppComponent {
 
   cerrarSesion(){
     localStorage.removeItem('autenticado');
-    this.router.navigate(["/ingreso"]);
+    this.navController.navigateRoot('/ingreso');
     this.menu.close();
   }
 }
