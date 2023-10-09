@@ -36,7 +36,7 @@
     // justify-content: center;
     justify-self: center;
     // align-items: center;
-    border: 1px solid black;
+    border: 1px none black;
     border-radius: 50%;
     overflow: hidden;
 }
@@ -76,7 +76,7 @@
 .contenedor_imagen_servicio {
     //tamaño
     width: 100px;
-    height: 90%;
+    height: 100%;
     //borde
     border-radius: 50px;
     //orden
