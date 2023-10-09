@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AutentificarUsuarioGuard } from './autentificar-usuario.guard';
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: 'ingreso',
     pathMatch: 'full'
-  },
+  },/*
+  {
+    path: 'inicio',
+    redirectTo: '/ingreso',
+    canActivate: [AutentificarUsuarioGuard]
+  },*/
   {
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)

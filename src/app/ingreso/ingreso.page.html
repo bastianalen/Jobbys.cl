@@ -6,7 +6,7 @@
 
 <ion-content>
   <div id="contenedor_form_ingreso">
-    <form  id="form_ingreso">
+    <form [formGroup]="formularioIngreso" id="form_ingreso">
       <div class="info_ingreso">
 
         <div class="info_nombre">
@@ -20,12 +20,11 @@
         </div>
         
         <div id="botones_ingreso">
-          <button ion-button class="btn_ingreso" (click)="ingresar()"><a >Ingresar</a></button>
+          <ion-button class="btn_ingreso" (click)="ingresar()"><a >Ingresar</a></ion-button>
           <a href="../recuperar-contrasena">Recuperar contraseña</a>
           <a href="../registro">Registrarse</a>
         </div>
       </div>
     </form>
   </div>
-
 </ion-content>

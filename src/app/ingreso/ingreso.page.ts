@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertController, MenuController } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-ingreso',
@@ -10,25 +11,23 @@ import { AlertController, MenuController } from '@ionic/angular';
 })
 export class IngresoPage implements OnInit {
 
-  formularioLogin: FormGroup;
   formularioIngreso: FormGroup;
 
   //nombreUsuario = localStorage.getItem('usuario');
-  constructor(public router: Router, public menuCtrl: MenuController, private alertController: AlertController, public fb: FormBuilder) { 
-    this.formularioLogin = this.fb.group({
-      // 'usuario': new FormControl("", Validators.required),
-      // 'contrasena': new FormControl("", Validators.required)
-    });
+  constructor(private navController: NavController, public router: Router, public menuCtrl: MenuController, private alertController: AlertController, public fb: FormBuilder) { 
 
     this.formularioIngreso = this.fb.group({
-      usuario: ['', Validators.required],
-      contrasena: ['', Validators.required],
+      'usuario': new FormControl("", Validators.required),
+      'contrasena': new FormControl("", Validators.required)
     });
-
   }
     
 
   ngOnInit() {
+    var autenticar = localStorage.getItem('autenticado');
+    if( autenticar == 'true'){
+      this.navController.navigateRoot('/inicio');
+    }
   }
 
   ionViewWillEnter(){
@@ -36,11 +35,7 @@ export class IngresoPage implements OnInit {
   }
 
   async ingresar(){
-    localStorage.setItem('usuario','Denfred16');
-    localStorage.setItem('contrasena','1234');
-
-
-    var datos = this.formularioLogin.value;
+    var datos = this.formularioIngreso.value;
 
     var usuario = localStorage.getItem('usuario');
     var contrasena = localStorage.getItem('contrasena');
@@ -55,7 +50,8 @@ export class IngresoPage implements OnInit {
       return;
     } else if (usuario == datos.usuario && contrasena == datos.contrasena){
       localStorage.setItem('autenticado','true');
-      this.router.navigate(["/inicio"]);
+      this.navController.navigateRoot('/inicio');
+      //this.router.navigate(["/inicio"]);
     } else {
       const alert = this.alertController.create({
         header: 'Error',
