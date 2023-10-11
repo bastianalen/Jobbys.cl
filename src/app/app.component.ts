@@ -12,10 +12,14 @@ export class AppComponent {
   public appPages = [
     { title: 'Inicio', url: 'inicio', icon: 'home' },
     { title: 'Servicios', url: 'servicios', icon: 'hammer' },
-    { title: 'Mapa', url: 'mapa', icon: 'map' },
 
   ];
   constructor( private navController: NavController, public router: Router, private menu: MenuController) {}
+
+  abrirMapa() {
+    this.router.navigate(['/mapa']);
+    this.menu.close();
+  }
 
   compartirAPP() {
     Share.share({
