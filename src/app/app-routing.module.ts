@@ -7,12 +7,7 @@ const routes: Routes = [
     path: '',
     redirectTo: 'ingreso',
     pathMatch: 'full'
-  },/*
-  {
-    path: 'inicio',
-    redirectTo: '/ingreso',
-    canActivate: [AutentificarUsuarioGuard]
-  },*/
+  },
   {
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
@@ -31,19 +26,23 @@ const routes: Routes = [
   },
   {
     path: 'servicios',
-    loadChildren: () => import('./servicios/servicios.module').then( m => m.ServiciosPageModule)
+    loadChildren: () => import('./servicios/servicios.module').then( m => m.ServiciosPageModule),
+    canActivate: [AutentificarUsuarioGuard]
   },
   {
     path: 'inicio',
-    loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
+    loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule),
+    canActivate: [AutentificarUsuarioGuard]
   },
   {
     path: 'gasfiteria',
-    loadChildren: () => import('./gasfiteria/gasfiteria.module').then( m => m.GasfiteriaPageModule)
+    loadChildren: () => import('./gasfiteria/gasfiteria.module').then( m => m.GasfiteriaPageModule),
+    canActivate: [AutentificarUsuarioGuard]
   },
   {
     path: 'mapa',
-    loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaPageModule)
+    loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaPageModule),
+    canActivate: [AutentificarUsuarioGuard]
   }
 ];
 

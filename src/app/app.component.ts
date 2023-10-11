@@ -16,6 +16,8 @@ export class AppComponent {
   ];
   constructor( private navController: NavController, public router: Router, private menu: MenuController) {}
 
+
+  
   abrirMapa() {
     this.router.navigate(['/mapa']);
     this.menu.close();

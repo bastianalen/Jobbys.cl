@@ -18,12 +18,12 @@
   </div>
   <div id="ordenar_servicios">
     <!-- PRUEBA DE PRODUCTOS CON API -->
-    <div class="contenedor_servicio" *ngFor="let producto of productos">
+    <div class="contenedor_servicio" *ngFor="let person of people">
       <div class="contenedor_imagen_servicio">
-        <img src="{{ producto.image }}" alt="">
+        <img src="{{ person.id }}" alt="">
       </div>
       <div class="nombre_servicio">
-        <h5>{{ producto.title }}</h5>
+        <h5>{{ person.name }}</h5>
       </div>
     </div>
 

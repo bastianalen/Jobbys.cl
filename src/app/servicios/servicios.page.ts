@@ -2,11 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-interface Product {
-id: string;
-title: string;
-image:string;
 
+interface People {
+id: string;
+name: string;
+username: string;
+email:string;
 }
 
 @Component({
@@ -16,17 +17,16 @@ image:string;
 })
 export class ServiciosPage implements OnInit {
 
-  productos: Product[] = []; 
-
+  people: People[] = []; 
 
   constructor(private httpClient:HttpClient) { }
 
   ngOnInit() {
 
-    this.httpClient.get<any>('https://fakestoreapi.com/products')
+    this.httpClient.get<any>(' https://jsonplaceholder.typicode.com/users')
     .subscribe((res: any) =>{
       console.log(res);
-      this.productos = res as Product[]
+      this.people = res as People[]
 
     });
 

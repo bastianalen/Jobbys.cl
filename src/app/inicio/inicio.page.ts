@@ -24,7 +24,6 @@ export class InicioPage implements OnInit {
 
 
   ngOnInit() {
-
     this.httpClient.get<any>('https://rickandmortyapi.com/api/character')
     .subscribe((res: any) => {
       console.log(res);

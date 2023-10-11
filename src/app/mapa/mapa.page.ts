@@ -18,7 +18,7 @@ export class MapaPage implements OnInit {
   }
 
   initMap() {
-    var myLatlng = new google.maps.LatLng(-33.68142157785643,-71.22594634660035);
+    var myLatlng = new google.maps.LatLng(-33.68195345087509, -71.23096268700078);
     
     var mapOptions = {
       zoom: 16,

@@ -13,7 +13,7 @@ export class IngresoPage implements OnInit {
 
   formularioIngreso: FormGroup;
 
-  //nombreUsuario = localStorage.getItem('usuario');
+  
   constructor(private navController: NavController, public router: Router, public menuCtrl: MenuController, private alertController: AlertController, public fb: FormBuilder) { 
 
     this.formularioIngreso = this.fb.group({
