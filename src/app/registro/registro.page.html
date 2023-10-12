@@ -16,6 +16,16 @@
         <div class="info_contrasenna">
           <h4 class="title_info">Contraseña</h4>
           <ion-input type="password" placeholder="********" class="input_info" formControlName="contrasenaPrincipal"></ion-input>
+
+          
+          <!-- Errores de validacion -->
+          <div *ngIf="formularioRegistro.get('contrasenaPrincipal')?.hasError('required')">
+            {{ validationMessages.password.required }}
+          </div>
+          <div *ngIf="formularioRegistro.get('contrasenaPrincipal')?.hasError('minlength') || formularioRegistro.get('contrasenaPrincipal')?.hasError('maxlength')">
+            {{ validationMessages.password.minlength }}
+          </div>
+
         </div>
         
         <div class="info_contrasenna">

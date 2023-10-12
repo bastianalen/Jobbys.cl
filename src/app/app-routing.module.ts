@@ -28,6 +28,7 @@ const routes: Routes = [
     path: 'servicios',
     loadChildren: () => import('./servicios/servicios.module').then( m => m.ServiciosPageModule),
     canActivate: [AutentificarUsuarioGuard]
+    
   },
   {
     path: 'inicio',
@@ -36,8 +37,7 @@ const routes: Routes = [
   },
   {
     path: 'gasfiteria',
-    loadChildren: () => import('./gasfiteria/gasfiteria.module').then( m => m.GasfiteriaPageModule),
-    canActivate: [AutentificarUsuarioGuard]
+    loadChildren: () => import('./gasfiteria/gasfiteria.module').then( m => m.GasfiteriaPageModule)
   },
   {
     path: 'mapa',

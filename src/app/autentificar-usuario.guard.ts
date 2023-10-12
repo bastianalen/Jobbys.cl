@@ -13,7 +13,6 @@ export class AutentificarUsuarioGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       if (localStorage.getItem('autenticado')) {
-        this.router.navigate(["/inicio"]);
         return true;
       } else {
         this.router.navigate(["/ingreso"]);

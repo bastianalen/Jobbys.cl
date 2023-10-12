@@ -12,12 +12,20 @@ export class RegistroPage implements OnInit {
 
   formularioRegistro: FormGroup;
 
-  //nombreUsuario = localStorage.getItem('usuario');
+  validationMessages = {
+    'password': {
+      'required': 'La contraseña es obligatoria.',
+      'minlength': 'La contraseña debe tener 10 o más caracteres.',
+      'maxlength': 'La contraseña debe tener 30 o menos caracteres.'
+    }
+  };
+
+
   constructor( private navController: NavController, public router: Router, private alertController: AlertController, public menuCtrl: MenuController, public fb: FormBuilder) { 
 
     this.formularioRegistro = this.fb.group({
       'nombreUsuario': new FormControl("", Validators.required),
-      'contrasenaPrincipal': new FormControl("", Validators.required),
+      'contrasenaPrincipal': new FormControl("", [Validators.required,Validators.minLength(10), Validators.maxLength(30)]),
       'contrasenaValidacion': new FormControl("", Validators.required)
     });
 
