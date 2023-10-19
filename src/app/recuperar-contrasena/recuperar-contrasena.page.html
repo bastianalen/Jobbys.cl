@@ -12,14 +12,21 @@
   </ion-header>
 
   <div id="contenedor_form_recuperar_contrasena">
-    <form action="" id="form_recuperar_contrasena">
+    <form [formGroup]="correoForm" id="form_recuperar_contrasena">
       <div class="info_recuperar_contrasena">
         <div class="info_nombre">
           <h4 class="title_info">Correo</h4>
-          <input type="text" placeholder="jobbys27@jobbys.cl" class="input_info">
+          <ion-input type="email" formControlName="correo" placeholder="jobbys27@jobbys.cl" class="input_info" id="correo"></ion-input>
+          <!-- Errores de validacion -->
+          <div *ngIf="correoForm.get('correo')?.hasError('required')">
+            {{ validationMessages.correo.required }}
+          </div>
+          <div *ngIf="correoForm.get('correo')?.hasError('email')">
+            {{ validationMessages.correo.email }}
+          </div>
         </div>
         <div id="botones_recuperar_contrasena">
-          <button class="btn_recuperar_contrasena"><a href="../ingreso">Recuperar</a></button>
+          <ion-button class="btn_recuperar_contrasena" (click)="recuperar()"><a>Recuperar</a></ion-button>
           <a href="../ingreso">Volver al inicio de sesión</a>
         </div>
       </div>

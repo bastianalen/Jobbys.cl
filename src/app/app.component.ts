@@ -9,6 +9,9 @@ import { MenuController, NavController } from '@ionic/angular';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+
+  correo = localStorage.getItem('correo');
+
   public appPages = [
     { title: 'Inicio', url: 'inicio', icon: 'home' },
     { title: 'Servicios', url: 'servicios', icon: 'hammer' },
@@ -32,7 +35,7 @@ export class AppComponent {
   }
 
   cerrarSesion(){
-    localStorage.removeItem('autenticado');
+    localStorage.setItem('autenticado', 'false');
     this.navController.navigateRoot('/ingreso');
     this.menu.close();
   }

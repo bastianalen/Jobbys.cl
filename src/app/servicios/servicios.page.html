@@ -10,20 +10,20 @@
 </ion-header>
 
 <ion-content >
-  <div id="top_scroll">
+  <!-- <div id="top_scroll">
     <h1>Carrusel de top en servicios</h1>
     <ion-list>
       <button class="btn btn-danger">asda</button>
     </ion-list>
-  </div>
+  </div> -->
   <div id="ordenar_servicios">
     <!-- PRUEBA DE PRODUCTOS CON API -->
-    <div class="contenedor_servicio" *ngFor="let person of people">
+    <div class="contenedor_servicio" *ngFor="let datos of product">
       <div class="contenedor_imagen_servicio">
-        <img src="{{ person.id }}" alt="">
+        <img src="{{ datos.images[0] }}" alt="">
       </div>
       <div class="nombre_servicio">
-        <h5>{{ person.name }}</h5>
+        <h5>{{ datos.title }}</h5>
       </div>
     </div>
 

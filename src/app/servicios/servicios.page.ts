@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 
-interface People {
+interface Products {
 id: string;
-name: string;
-username: string;
-email:string;
+title: string;
+description: string;
+images:string;
 }
 
 @Component({
@@ -17,16 +17,18 @@ email:string;
 })
 export class ServiciosPage implements OnInit {
 
-  people: People[] = []; 
+  product: Products[] = []; 
 
   constructor(private httpClient:HttpClient) { }
 
   ngOnInit() {
 
-    this.httpClient.get<any>(' https://jsonplaceholder.typicode.com/users')
+    this.httpClient.get<any>('https://api.escuelajs.co/api/v1/products')
     .subscribe((res: any) =>{
       console.log(res);
-      this.people = res as People[]
+      var ads = res.splice(0,40);
+      console.log(ads);
+      this.product = ads as Products[]
 
     });
 
