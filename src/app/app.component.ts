@@ -29,7 +29,7 @@ export class AppComponent {
   compartirAPP() {
     Share.share({
       title:'Compartir APP',
-      url: 'https://jobbys.cl/',
+      url: 'https://usuario13.talleresmelipilla.cl/',
       dialogTitle: 'Jobbys APP',
     });
   }
